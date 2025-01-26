@@ -1,0 +1,25 @@
+﻿@page "/"
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Start Fellowship</title>
+    <base href="~/" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <link href="Client.styles.css" rel="stylesheet" />
+    <link href="~/modal.css" rel="stylesheet" />
+</head>
+<body class="from-white to-grey-200 h-full bg-gradient-to-b">
+
+    <component type="typeof(Client.App)" render-mode="WebAssembly">
+    </component>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+
+</body>
+</html>
