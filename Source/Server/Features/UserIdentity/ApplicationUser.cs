@@ -1,6 +1,9 @@
-﻿namespace Server.Features.UserIdentity
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Server.Features.UserIdentity
 {
-    public class ApplicationUser
+    public class ApplicationUser : IdentityUser
     {
+
     }
 }

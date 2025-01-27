@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Server.Features.UserIdentity;
 using Server.Infrastructure.EFCore;
+using Server.Infrastructure.SignalR;
 
 namespace Server
 {
@@ -106,6 +107,7 @@ namespace Server
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
+                endpoints.MapHub<NotificationHub>("NotificationHub");
                 endpoints.MapFallbackToPage("/_Host");
             });
         }
