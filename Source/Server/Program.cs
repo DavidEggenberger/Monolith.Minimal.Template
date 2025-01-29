@@ -23,8 +23,8 @@ namespace Server
                 {
                     webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
                     {
-                        config.AddAzureKeyVault(new Uri("https://hacksgkeyvault.vault.azure.net/"),
-                            new DefaultAzureCredential(new DefaultAzureCredentialOptions { ManagedIdentityClientId = "b803e77c-0003-4a3a-8d33-861eb2e3ebbf" }));
+                        config.AddAzureKeyVault(new Uri(""),
+                            new DefaultAzureCredential(new DefaultAzureCredentialOptions { ManagedIdentityClientId = "" }));
                     });
                     webBuilder.UseStartup<Startup>();
                 });
