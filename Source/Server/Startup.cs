@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Server.Features.UserIdentity;
 using Server.Infrastructure.EFCore;
 using Server.Infrastructure.SignalR;
@@ -35,6 +36,26 @@ namespace Server
             services.AddSignalR();
             services.AddRazorPages();
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "",
+                        Version = "v1",
+                        Description = "Open API",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "David Eggenberger"
+                        },
+                        License = new OpenApiLicense
+                        {
+                            Name = "Example License",
+                            Url = new Uri("https://example.com/license")
+                        }
+                    });
+            });
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -94,6 +115,13 @@ namespace Server
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.InjectStylesheet("/swagerStyles.css");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
