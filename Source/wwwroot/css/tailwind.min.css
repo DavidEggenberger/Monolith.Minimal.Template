@@ -1,0 +1,34 @@
+/*! tailwindcss v4.0.3 | MIT License | https://tailwindcss.com */
+.invisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.absolute {
+  position: absolute;
+}
+.static {
+  position: static;
+}
+.z-50 {
+  z-index: 50;
+}
+.container {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.bg-gradient-to-b {
+  --tw-gradient-position: to bottom in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+}
+.has-tooltip:hover .tooltip {
+  visibility: visible;
+  z-index: 50;
+}

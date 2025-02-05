@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\OpenAI\" />
+    <Folder Include="wwwRoot\css\" />
   </ItemGroup>
 
 </Project>
